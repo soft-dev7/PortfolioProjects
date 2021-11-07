@@ -17,8 +17,6 @@ ORDER BY 1,2
 
 
 -- Looking at Total Cases vs Total Deaths
--- Shows likelihood of dying if you contract covid in your country?? (does it though?-because it is showing the overall 
---percentage of death from over a year ago collectively?)
 
 SELECT Location, date, total_cases, total_deaths, (total_deaths/total_cases)*100 as DeathPercentage
 FROM PortfolioProject..CovidDeaths
@@ -57,8 +55,6 @@ Group By Location
 ORDER BY TotalDeathCount desc
 
 
--- LET'S BEAK THIS DOWN BY CONTINENT
-
 -- Showing continents with the highest death count per population
 
 SELECT continent, MAX(cast(Total_deaths as int)) as TotalDeathCount
@@ -96,7 +92,6 @@ ORDER BY 2,3
 
 
 -- USE CTE
-/* is this correct? percentage of US is in the 100's??*/
 
 With PopvsVac (Continent, Location, Date, population, New_Vaccinations, RollingPeopleVaccinated)
 as
